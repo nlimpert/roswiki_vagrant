@@ -10,6 +10,7 @@ node default {
         'apache2': ensure => latest;
         'libapache2-mod-wsgi': ensure => latest;
         'python-yaml': ensure => latest;
+        'python-clearsilver': ensure => latest;
     }
 
     vcsrepo { '/var/www/wiki.ros.org/conf':

@@ -15,7 +15,7 @@ FOUND_YUM=$?
 
 if [ "${FOUND_APT}" -eq '0' ]; then
   apt-get -q -y update
-  apt-get -q -y install ruby-json libaugeas-dev libaugeas-ruby1.9.1 pkg-config ruby-dev
+  apt-get -q -y install ruby-json libaugeas-dev ruby-augeas pkg-config ruby-dev gem puppet apache2-dev
   echo 'ruby-json and augeas installed.'
 fi
 

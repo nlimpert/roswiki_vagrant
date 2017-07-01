@@ -23,6 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.module_path = ['puppet/modules-contrib', 'puppet/modules' ]
   end
 
+  config.vm.provision :shell, :path => "shell/wsgi_update.sh"
+
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   config.vm.synced_folder "../roswiki/", "/vagrant-roswiki"

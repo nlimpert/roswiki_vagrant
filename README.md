@@ -1,3 +1,7 @@
+Note: this readme is a modified version of the original one to test ci badge enhancements locally
+(in reference to https://github.com/ros-infrastructure/roswiki/issues/232)
+
+
 roswiki_vagrant
 ===============
 A set of Vagrant and Puppet scripts to deploy and test roswiki in a VM.
@@ -18,26 +22,20 @@ Vagrant
 The Vagrant team provides Debian packages available from their
 website: http://www.vagrantup.com/downloads.html
 
-vagrant-vbguest
----------------
-Vagrant needs the Virtualbox Guest Additions to be in sync with the version of
-Virtualbox installed on the host. The vagrant-vbguest plugin checks that the
-version of the Virtualbox Guest Additions matches and installs the most recent
-version if needed.
 
-To install vagrant-vbguest just type:
+Usage with sample data
+===
+Clone the following repositories to setup a sample ROSWiki instance
 
 ```
-$ vagrant plugin install vagrant-vbguest
+$ git clone https://github.com/nlimpert/roswiki.git -b nlimpert/current
+$ git clone https://github.com/nlimpert/roswiki_vagrant.git -b nlimpert/current
+$ git clone https://github.com/nlimpert/roswiki_dev_sample_data.git -b nlimpert/sample_yaml
 ```
 
-
-Usage
-=====
-Checkout this repository and roswiki's side by side, so both copies are siblings and
-type the following from the roswiki_vagrant directory to start the VM:
-
+Afterwards startup the virtual machine:
 ```
+$ cd roswiki_vagrant
 $ vagrant up
 ```
 
@@ -48,6 +46,13 @@ can be changed in Vagrantfile:
 ```
 config.vm.network "forwarded_port", guest: 8080, host: 8080
 ```
-
 where guest is the port where Apache listens inside the VM and host the port that is
 accessible from the web browser.
+
+The wiki should contain a sample page called "actionlib", which is accessible via http://localhost:8080/actionlib.
+It also contains a "TestUser" with the password "TestUser" (without quotation marks). This user is allowed to create and modify pages.
+
+Please note that new pages have to contain the following macro calling line in order to load the Package Header:
+```
+<<PackageHeader(<packagename>)>>
+```

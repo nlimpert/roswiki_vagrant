@@ -25,7 +25,7 @@ website: http://www.vagrantup.com/downloads.html
 
 Usage with sample data
 ===
-Clone the following repositories to setup a sample ROSWiki instance
+Clone the following repositories to setup a sample ROSWiki instance:
 
 ```
 $ git clone https://github.com/nlimpert/roswiki.git -b nlimpert/ci_enhancements

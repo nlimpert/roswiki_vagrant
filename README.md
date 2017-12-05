@@ -28,7 +28,7 @@ Usage with sample data
 Clone the following repositories to setup a sample ROSWiki instance
 
 ```
-$ git clone https://github.com/nlimpert/roswiki.git -b nlimpert/current
+$ git clone https://github.com/nlimpert/roswiki.git -b nlimpert/ci_enhancements
 $ git clone https://github.com/nlimpert/roswiki_vagrant.git -b nlimpert/current
 $ git clone https://github.com/nlimpert/roswiki_dev_sample_data.git -b nlimpert/sample_yaml
 ```
@@ -48,6 +48,18 @@ config.vm.network "forwarded_port", guest: 8080, host: 8080
 ```
 where guest is the port where Apache listens inside the VM and host the port that is
 accessible from the web browser.
+
+According to the Vagrantfile there are three directories passed to the VM:
+- roswiki: containing the macros and the ROSWiki additions to the MoinMoin wiki
+- roswiki_dev_sample_data/docs/: a path to represent the manifest.yaml for each package:
+```
+docs/<distro>/api/<packagename>/manifest.yaml
+```
+- roswiki_dev_sample_data/devel_jobs/: a path to represent the devel_jobs.yaml for each package:
+```
+devel_jobs/<distro>/api/<packagename>/devel_jobs.yaml
+```
+
 
 The wiki should contain a sample page called "actionlib", which is accessible via http://localhost:8080/actionlib.
 It also contains a "TestUser" with the password "TestUser" (without quotation marks). This user is allowed to create and modify pages.

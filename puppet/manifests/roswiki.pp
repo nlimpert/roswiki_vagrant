@@ -19,6 +19,15 @@ node default {
         revision => 'conf',
     }
 
+    vcsrepo { '/var/www/wiki.ros.org/data/pages':
+        ensure => present,
+        provider => git,
+        source => 'git://github.com/nlimpert/roswiki_dev_sample_data.git',
+        revision => 'nlimpert/pages',
+        user => 'www-data',
+        group => 'www-data',
+    }
+
     file { '/var/www/wiki.ros.org/data/plugin':
         owner => www-data,
         group => www-data,

@@ -1,6 +1,7 @@
 Note: this readme is a modified version of the original one to test ci badge enhancements locally
 (in reference to https://github.com/ros-infrastructure/roswiki/issues/232)
 
+The original setup of roswiki_vagrant makes use of Ubuntu Trusty. This is a patched version running Xenial.
 
 roswiki_vagrant
 ===============

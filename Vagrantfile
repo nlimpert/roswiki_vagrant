@@ -26,4 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   config.vm.synced_folder "../roswiki/", "/vagrant-roswiki"
+  config.vm.synced_folder "../wiki.ros.org/", "/var/www/wiki.ros.org", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "../roswiki_dev_sample_data/docs/", "/home/rosbot/docs/", owner: "ubuntu", group: "ubuntu"
+  config.vm.synced_folder "../roswiki_dev_sample_data/devel_jobs/", "/home/rosbot/devel_jobs/", owner: "ubuntu", group: "ubuntu"
 end

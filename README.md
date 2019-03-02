@@ -29,8 +29,8 @@ Usage with sample data
 Clone the following repositories to setup a sample ROSWiki instance:
 
 ```
-$ git clone https://github.com/nlimpert/roswiki.git -b nlimpert/ci_enhancements
-$ git clone https://github.com/nlimpert/roswiki_vagrant.git -b nlimpert/current
+$ git clone https://github.com/ros-infrastructure/roswiki.git
+$ git clone https://github.com/nlimpert/roswiki_vagrant.git -b nlimpert/sample_data
 $ git clone https://github.com/nlimpert/roswiki_dev_sample_data.git -b nlimpert/sample_yaml
 ```
 
